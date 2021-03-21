@@ -2,7 +2,7 @@
 {
     'name': "Mandatory Field Popup",
     'summary': """
-        Error popup customized""",
+        Mandatory Field Popup""",
     'description': """
     """,
     'author': "Alhaditech",
