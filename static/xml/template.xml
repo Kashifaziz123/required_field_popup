@@ -1,0 +1,30 @@
+<template>
+    <t t-name='NewNotification'>
+        <t t-if="widget.className == ' o_error'">
+           <div class="NewNotification">
+            <div class="notification_modify modal-content"  t-translation="off" role="alertdialog">
+				<div class="modal-header">
+					<div class="flex justify-between">
+						<div class="fill-width flex">
+							<span class="indicator orange"></span>
+							<h4 class="modal-title">Missing Values Required</h4>
+						</div>
+						<div>
+							<div class="text-right buttons">
+								<button t-if="widget.sticky" type="button" class="btn btn-default btn-sm btn-modal-close new_close" data-dismiss="modal">
+									<i class="octicon octicon-x visible-xs" style="padding: 1px 0px;"></i>
+									<span class="hidden-xs">Close</span>
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-body ui-front"><div class="msgprint"><t t-raw="widget.title"/><t t-raw="widget.message"/></div></div>
+			</div>
+           </div>
+        </t>
+        <t t-if="widget.className != ' o_error'">
+            <t t-call="Notification"/>
+        </t>
+    </t>
+</template>

@@ -1,0 +1,168 @@
+.NewNotification .notification_modify{
+    position: fixed !important;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: #fff !important;
+    width: 450px;
+    margin: 5px 0 0 0;
+}
+.NewNotification .modal.in .modal-dialog {
+    transform: translate(0);
+}
+.NewNotification .modal.fade .modal-dialog {
+    transition: transform .3s ease-out;
+    transform: translateY(-25%);
+}
+.NewNotification .msgprint-dialog {
+    max-width: 400px;
+}
+@media (min-width: 768px){
+    .NewNotification .modal-dialog {
+        width: 600px;
+        margin: 30px auto;
+    }
+}
+.NewNotification .modal-dialog {
+    position: relative;
+    width: auto;
+    margin: 10px;
+}
+.NewNotification .msgprint-dialog .modal-content {
+    min-height: 110px;
+}
+.NewNotification .modal-content {
+    border-radius: 3px;
+}
+@media (min-width: 768px){
+    .NewNotification .modal-content {
+        box-shadow: 0 5px 15px rgb(0 0 0 / 50%);
+    }
+}
+.NewNotification .modal-content {
+    position: relative;
+    background-color: #fff;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid #999;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: 6px;
+    outline: 0;
+    box-shadow: 0 3px 9px rgb(0 0 0 / 50%);
+}
+.NewNotification .modal-header {
+    padding: 10px 15px;
+}
+.NewNotification .modal-header {
+    min-height: 16.42857143px;
+    padding: 15px;
+    border-bottom: 1px solid #e5e5e5;
+}
+.NewNotification .justify-between {
+    justify-content: space-between;
+}
+.NewNotification .flex {
+    display: flex;
+    width: 100%;
+}
+.NewNotification .fill-width {
+    flex: 1;
+}
+.NewNotification .modal-header .indicator {
+    margin-top: 7.5px;
+    margin-right: 3px;
+}
+.NewNotification .indicator,.NewNotification  .indicator-right {
+    background: none;
+    vertical-align: middle;
+    font-size: 12px;
+    font-weight: 700;
+    color: #6c7680;
+}
+.NewNotification .indicator-right.orange:after, .NewNotification .indicator.orange:before {
+    background: #ffa00a;
+}
+.NewNotification .indicator:before {
+    margin: 0 4px 0 0;
+}
+.NewNotification .indicator-right:after, .NewNotification .indicator:before {
+    content: "";
+    display: inline-block;
+    height: 8px;
+    width: 8px;
+    border-radius: 8px;
+}
+.NewNotification h4.modal-title {
+    margin-block-start: 0.4em;
+    font-weight: bold;
+}
+.NewNotification .modal-title {
+    margin-top: 5px;
+    margin: 0;
+    line-height: 1.42857143;
+}
+.NewNotification .text-right {
+    text-align: right;
+}
+.NewNotification .btn {
+    transition: background-color .2s;
+}
+.NewNotification .btn {
+    outline: 0;
+}
+.NewNotification .btn-group-sm>.btn,.NewNotification  .btn-sm {
+    padding: 5px 10px;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 3px;
+}
+.NewNotification .btn-default {
+    color: inherit;
+    background-color: #f0f4f7;
+    border-color: transparent;
+}
+.NewNotification .btn {
+    display: inline-block;
+    padding: 4px 10px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+.NewNotification .octicon {
+    font: normal normal normal 16px/1 octicons;
+    display: inline-block;
+    text-decoration: none;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.NewNotification .visible-xs{
+    display: none!important;
+}
+.NewNotification .msgprint {
+    word-wrap: break-word;
+    font-size: 15px;
+    line-height: 1.7;
+    color: #36414c;
+}
+@media (max-width: 650px){
+    .NewNotification .notification_modify {
+        width: 100%;
+    }
+}
