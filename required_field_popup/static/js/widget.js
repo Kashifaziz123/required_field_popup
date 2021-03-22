@@ -25,7 +25,7 @@ odoo.define('required_field_popup.BasicController', function(require) {
             });
             warnings.unshift('<ul>');
             warnings.push('</ul>');
-            this.do_warn(_t("Following fields are mandatory:"), warnings.join(''),"1");
+            this.do_warn(_t("The following fields are invalid:"), warnings.join(''),"1");
         },
      });
     Notification.include({
@@ -34,7 +34,33 @@ odoo.define('required_field_popup.BasicController', function(require) {
         'click > .o_close': '_onClose',
         'click .new_close': '_onClose',
         'click .o_buttons button': '_onClickButton'
-    },
-
+        },
+        start: function () {
+            var self = this;
+            return this._super.apply(this, arguments).then(function () {
+                self.$el.animate({opacity: 1.0}, self._animationDelay, "swing", function () {
+                    if(!self.sticky) {
+                        setTimeout(function () {
+                            self.close();
+                        }, self._autoCloseDelay);
+                    }
+                    if(self.className == ' o_error') {
+                        self.dispose();
+                    }
+                });
+            });
+        },
+        dispose: function(){
+            var self = this;
+            if (!self.isDestroyed()){
+                var state = self.__parentedParent.__parentedParent._current_state;
+                setTimeout(function () {
+                    if(!self.isDestroyed() && self.__parentedParent.__parentedParent._current_state != state)
+                        self.close();
+                    else
+                        self.dispose();
+                }, 500);
+            }
+        },
     });
 });
