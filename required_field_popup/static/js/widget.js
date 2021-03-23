@@ -25,7 +25,15 @@ odoo.define('required_field_popup.BasicController', function(require) {
             });
             warnings.unshift('<ul>');
             warnings.push('</ul>');
-            this.do_warn(_t("The following fields are invalid:"), warnings.join(''),"1");
+            if (this.connectionNotificationID) {
+                this.call('notification', 'close', this.connectionNotificationID);
+            }
+            this.connectionNotificationID = this.call('notification', 'notify', {
+                type: 'warning',
+                title: _t("The following fields are invalid:"),
+                message: warnings.join(''),
+                sticky: true
+            });
         },
      });
     Notification.include({
